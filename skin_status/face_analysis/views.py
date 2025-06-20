@@ -72,12 +72,9 @@ def analyze_faces_and_acne_level(request):
         personal_color, pc_conf = None, None
 
     return Response({
-        "detail": f"적합한 얼굴 사진 {selected_filename} 분석 완료",
-        "selected_file": selected_filename,
         "acne_level": int(acne_level),
         "confidence": float(prob),
-        "level_msg": "정상 (여드름 없음)" if acne_level == 0 else f"여드름 레벨 {acne_level} (1~5)",
+        "skin_lv": "정상 (여드름 없음)" if acne_level == 0 else f"{acne_level}",
         "personal_color": personal_color,
         "pc_confidence": f"{pc_conf:.2f}%" if pc_conf is not None else "예측 실패",
-        "results": results
     }, status=200)
