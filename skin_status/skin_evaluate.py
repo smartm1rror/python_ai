@@ -9,7 +9,7 @@ import seaborn as sns
 import numpy as np
 
 # === 설정 ===
-test_dir = r'..\data\skin_dataset\val'
+test_dir = r'..\..\data\skin_dataset\val'
 model_path = 'mobilenet_skin_best.pth'
 batch_size = 32
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

@@ -7,10 +7,10 @@ from torch.utils.data import DataLoader
 import numpy as np
 
 def main():
-    train_dir = r'..\data\skin_dataset\train'
-    val_dir = r'..\data\skin_dataset\val'
+    train_dir = r'..\..\data\skin_dataset\train'
+    val_dir = r'..\..\data\skin_dataset\val'
 
-    batch_size = 32
+    batch_size = 64
     num_epochs = 25
     lr = 0.0005
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -36,8 +36,8 @@ def main():
     num_classes = len(class_names)
     print("클래스 목록:", class_names)
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=0)
-    val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers=0)
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=2)
+    val_loader = DataLoader(val_dataset, batch_size=batch_size, num_workers=2)
 
     # 클래스별 가중치 계산
     class_counts = np.bincount([label for _, label in train_dataset])
