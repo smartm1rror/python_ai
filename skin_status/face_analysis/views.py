@@ -21,6 +21,8 @@ def analyze_faces(request):
     upload_dir = os.path.join(settings.MEDIA_ROOT, 'uploaded')
     os.makedirs(upload_dir, exist_ok=True)
 
+    print("Test: ", settings.MEDIA_ROOT)
+
     prefix = datetime.now().strftime('%Y%m%d_%H%M%S')
     valid_face_count = 0
     results = []

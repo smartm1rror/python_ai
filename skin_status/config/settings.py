@@ -15,7 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'face_analysis',
+    'skin_status.face_analysis',
 ]
 
 MIDDLEWARE = [

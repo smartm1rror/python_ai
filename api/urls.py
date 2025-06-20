@@ -4,4 +4,5 @@ from .views import PredictColorView
 
 urlpatterns = [
     path('predict/', PredictColorView.as_view(), name='predict-color'),
+    path('analyze/', PredictColorView.as_view()),
 ]

@@ -1,7 +1,6 @@
-# skin_status/urls.py
 from django.urls import path
-from .views import SkinStatusView
+from .views import analyze_faces
 
 urlpatterns = [
-    path('', SkinStatusView.as_view(), name='skin-status'),
+    path('faces/', analyze_faces, name='analyze-faces'),  # /analyze/faces/로 연결됨
 ]
